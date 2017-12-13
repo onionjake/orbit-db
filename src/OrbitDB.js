@@ -29,7 +29,7 @@ class OrbitDB {
     this.stores = {}
     this.types = validTypes
     this.directory = directory || './orbitdb'
-    this.keystore = new Keystore(path.join(this.directory, this.id, '/keystore'))
+    this.keystore = Keystore.create(path.join(this.directory, this.id, '/keystore'))
     this.key = this.keystore.getKey(this.id) || this.keystore.createKey(this.id)
   }
 
